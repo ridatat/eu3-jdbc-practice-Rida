@@ -7,6 +7,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utilities.ConfigurationReader;
 
+import java.util.*;
+import java.util.Map;
+
 import static org.testng.Assert.*;
 import static io.restassured.RestAssured.*;
 
@@ -71,6 +74,38 @@ And size is 20
 And totalPages is 1
 And sorted is false
          */
+    @Test
+    public void q2(){
+        //create a map for query param
+        Map<String, Object> queryMap = new HashMap<>();
+        queryMap.put("gender", "Female");
+        queryMap.put("nameContains ", "r");
+        Response response = given().accept(ContentType.JSON)
+                .and().queryParams(queryMap)
+                .when().get("/api/spartans/search");
+
+        assertEquals(response.statusCode(),200);
+        assertEquals(response.contentType(),"application/json;charset=UTF-8");
+        JsonPath jsonPath = response.jsonPath();
+        List<String> gender = jsonPath.getList("content.gender");
+        for (String s : gender) {
+            assertEquals(s,"Female");
+        }
+        List<String> names = jsonPath.getList("content.name");
+        for (String n : names) {
+            assertTrue(n.toLowerCase().contains("r"));
+        }
+        assertEquals(jsonPath.getInt("size"),20);
+        assertEquals(jsonPath.getInt("totalPages"),1);
+
+        assertFalse(jsonPath.getBoolean("pageable.sort.sorted"));
+        System.out.println(jsonPath.getBoolean("pageable.sort.sorted"));
+
+
+
+
+    }
+
 
 
 
