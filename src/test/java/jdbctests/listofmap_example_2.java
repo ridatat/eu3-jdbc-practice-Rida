@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class listofmap_example {
+public class listofmap_example_2 {
     String dbUrl = "jdbc:oracle:thin:@3.80.189.73:1521:xe";
     String dbUsername = "hr";
     String dbPassword = "hr";
@@ -39,10 +39,10 @@ public class listofmap_example {
 
 
         Map< String, Object> row2  = new HashMap<>();
-        row1.put("first_name","Neena");
-        row1.put("last_name","Kochhar");
-        row1.put("salary","17000");
-        row1.put("job_id","AD_VP");
+        row2.put("first_name","Neena");
+        row2.put("last_name","Kochhar");
+        row2.put("salary","17000");
+        row2.put("job_id","AD_VP");
         System.out.println(row2.toString());
         System.out.println(row2.get("salary"));
 

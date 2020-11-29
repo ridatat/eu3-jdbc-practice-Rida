@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.sql.*;
 import java.util.*;
 
-public class dynamic_list {
+public class dynamic_list_3 {
 
 
         String dbUrl = "jdbc:oracle:thin:@3.80.189.73:1521:xe";

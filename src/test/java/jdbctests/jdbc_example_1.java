@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import java.sql.*;
 
-public class jdbc_example {
+public class jdbc_example_1 {
     String dbUrl = "jdbc:oracle:thin:@54.91.205.197:1521:xe";
     String dbUsername = "hr";
     String dbPassword = "hr";
