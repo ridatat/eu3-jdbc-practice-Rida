@@ -26,7 +26,7 @@ public class HamcrestMatchersApiTest_day5_2 {
     protected void hi(){
         given().accept(ContentType.JSON)
                 .pathParam("id", 15)
-                .when().get("http://54.91.205.197:8000/api/spartans/{id}")
+                .when().get("http://18.212.66.90:8000/api/spartans/{id}")
                 .then().statusCode(200)
                 .and().contentType("application/json")
                 .and().body("id",equalTo(15),
@@ -39,9 +39,9 @@ public class HamcrestMatchersApiTest_day5_2 {
     public void OneSpartanWithHamcrest(){
         given().accept(ContentType.JSON)
                 .and().pathParam("id",15).
-                when().get("http://54.91.205.197:8000/api/spartans/{id}")
+                when().get("http://18.212.66.90:8000/api/spartans/{id}")
                 .then().statusCode(200)
-                .and().assertThat().contentType("application/json;charset=UTF-8")
+                .and().assertThat().contentType("application/json")
                 .and().assertThat().body("id",equalTo(15),
                 "name",equalTo("Meta"),
                                      "gender",equalTo("Female"),

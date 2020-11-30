@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
 public class SpartanTestWithPath {
     @BeforeClass
     public void beforeClass(){
-        baseURI="http://54.91.205.197:8000";
+        baseURI="http://18.212.66.90:8000";
     }
 
     /*

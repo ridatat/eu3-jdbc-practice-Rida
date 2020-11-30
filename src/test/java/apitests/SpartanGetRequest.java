@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 public class SpartanGetRequest {
 
-    String spartanUrl= "http://54.91.205.197:8000";
+    String spartanUrl= "http://18.212.66.90:8000";
 
     @Test
     public void test1(){

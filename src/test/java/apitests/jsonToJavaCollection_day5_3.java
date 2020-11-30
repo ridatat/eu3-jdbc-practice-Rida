@@ -25,6 +25,7 @@ public class jsonToJavaCollection_day5_3 {
         Response response = given().accept(ContentType.JSON)
                 .pathParam("id", 15)
                 .when().get("/api/spartans/{id}");
+
         assertEquals(response.getStatusCode(),200);
 
         //we will convert json response to java map
@@ -39,17 +40,5 @@ public class jsonToJavaCollection_day5_3 {
         System.out.println("phone = " + phone);
 
     }
-    @Test
-    public void spartanToMap2(){
 
-        Response response = given().accept(ContentType.JSON)
-                .when().get("/api/spartans");
-        assertEquals(response.getStatusCode(),200);
-
-        //we will convert json response to java map
-        Map<String,Object> jsonDataMap = response.body().as(Map.class);
-        System.out.println("jsonDataMap = " + jsonDataMap);
-
-
-    }
 }
